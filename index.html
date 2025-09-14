@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="./Images/stardew-favicon.png">
+    <title>Stardew Lake</title>
+</head>
+<body>
+
+    <audio id="bg-music" loop>
+        <source src="./Audio/StardewValleySpring.mp3" type="audio/mpeg">
+    </audio>  
+
+    <!-- <audio id="jiggle-sound">
+        <source src="./Audio/intercom-notification.mp3" type="audio/mpeg">
+    </audio>   -->
+
+    <audio id="jiggle-sound">
+        <source src="./Audio/F1-notification.m4a" type="audio/mpeg">
+    </audio>  
+
+    <audio id="typing-fast">
+        <source src="./Audio/typing-fast.m4a" type="audio/mpeg">
+    </audio>
+
+    <audio id="open-journal">
+        <source src="./Audio/open_journal.m4a" type="audio/mpeg">
+    </audio>
+
+    <audio id="tap-journal">
+        <source src="./Audio/tap_journal.m4a" type="audio/mpeg">
+    </audio>
+    
+    <audio id="close-journal">
+        <source src="./Audio/close_journal.m4a" type="audio/mpeg">
+    </audio>
+
+   <audio id="open-dialogue">
+        <source src="./Audio/opened_dialogue.m4a" type="audio/mpeg">
+    </audio>
+
+    <audio id="finish-dialogue">
+        <source src="./Audio/finished_dialogue.m4a" type="audio/mpeg">
+    </audio>
+
+    <audio id="close-dialogue">
+        <source src="./Audio/close_dialogue.m4a" type="audio/mpeg">
+    </audio>
+
+    <audio id="celebration">
+        <source src="./Audio/celebration.mp3" type="audio/mpeg">
+    </audio>
+
+    
+    <div id="full-overlay" class="full-overlay hidden">
+        <div id="overlay-content" class="overlay-content">
+            <p id="typing-text"></p>
+            <div class="btn-group">
+                <img id="btn-yes" class="no-opacity" src="./Images/yes-button-final.png">
+                <img id="btn-no" class="no-opacity" src="./Images/no-button-final.png">
+            </div>
+        </div>
+    </div>
+
+    <div class="container-flex">
+        <div class="flex-child-1" id="flex1">
+            <a href=""> 
+                <img class="mail-icon" id="btn1" src="./Images/mail-icon.png">
+            </a>
+        </div>
+
+         <div class="flex-child-2 hidden" id="flex2"> 
+            <div class="grandchild-1">
+                <div class="ggc-1">
+                    <img src="./Images/quest-log.png">
+                    <div class="journal">
+                        <div class="large-text">
+                            <p>Journal</p>
+                        </div>    
+                    </div>
+                </div>
+
+                <div class="ggc-2">
+                    <img src="./Images/block.png">
+                            <div class="overlay-flex" id="btn3">
+                                <div class="advancement large-text">
+                                    <img id="New" class="new" src="./Images/new.png">
+                                    <p>Advancement</p>
+                                </div>
+                                <div class="advancement-text hidden" id="AdvText">
+                                    <div>
+                                          <p>As you gain experience, you'll discover new tools and techniques to increase happiness and make life easier. An unprompted kiss, for example, will prevent overthinking from snacking on your partner's precious mind. <br></p>
+                                    </div>
+                                    <div class="blue-text-flex">
+                                        <div class="blue-text-flex-child">
+                                            <div><img src="./Images/arrow.png"> </div>   
+                                            <div><p class="blue-text">Affirmation</p></div>
+                                        </div>
+
+                                        <div class="blue-text-flex-child">
+                                            <div><img src="./Images/arrow.png"> </div>
+                                            <div> <p class="blue-text">Direction</p></div>
+                                           
+                                        </div>
+
+                                        <div class="blue-text-flex-child">
+                                            <div><img src="./Images/arrow.png"> </div>
+                                            <div><p class="blue-text">Affection</p></div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="cancel-quest hidden" id="CanQue">
+                                    <div class="cancel-quest-a"><img class="no-opacity" src="./Images/cancel-quest.png"></div>
+                                    <div class="cancel-quest-b" id="btn4">    
+                                        <img class="cancel-quest-img" src="./Images/cancel-quest.png">
+                                        <div class="cancel-quest-text">
+                                            <p>Cancel Quest</p>
+                                        </div>   
+                                    </div>
+                                </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="grandchild-2">
+                <div class="gg1">
+                    <img id="btn2" src="./Images/exitnew.png">
+                </div>
+
+                <div class="gg2">
+                    <img id="btn5" src="./Images/next.png">
+                </div>
+                
+            </div>
+
+
+
+
+        </div>
+
+        <div class="flex-child-3 hidden" id="flex3">
+
+            <div class="child-of-3-1">
+                <img src="./Images/choose-one.png">
+                <div class="choose-one">
+                    <div> <p>Choose One:</p></div>
+                   
+                </div>
+               
+            </div>
+
+
+            <div class="child-of-3-2">
+                <div class="scroller">
+                    <div class="scroller-inner">
+                        <div class="item beige"><img src="./Images/classic-chicken.png"></div>
+                        <div class="item brown"><img src="./Images/brown-chicken.png"></div>
+                        <div class="item blue"><img src="./Images/blue-chicken.png"></div>
+                        <div class="item beige"><img src="./Images/classic-chicken.png"></div>
+                        <div class="item brown"><img src="./Images/brown-chicken.png"></div>
+                        <div class="item blue"><img src="./Images/blue-chicken.png"></div>
+
+                        <div class="item beige"><img src="./Images/classic-chicken.png"></div>
+                        <div class="item brown"><img src="./Images/brown-chicken.png"></div>
+                        <div class="item blue"><img src="./Images/blue-chicken.png"></div>
+                        <div class="item beige"><img src="./Images/classic-chicken.png"></div>
+                        <div class="item brown"><img src="./Images/brown-chicken.png"></div>
+                        <div class="item blue"><img src="./Images/blue-chicken.png"></div>
+
+                        <div class="item beige"><img src="./Images/classic-chicken.png"></div>
+                        <div class="item brown"><img src="./Images/brown-chicken.png"></div>
+                        <div class="item blue"><img src="./Images/blue-chicken.png"></div>
+                        <div class="item beige"><img src="./Images/classic-chicken.png"></div>
+                        <div class="item brown"><img src="./Images/brown-chicken.png"></div>
+                        <div class="item blue"><img src="./Images/blue-chicken.png"></div>
+                        
+                        <div class="item beige"><img src="./Images/classic-chicken.png"></div>
+                        <div class="item brown"><img src="./Images/brown-chicken.png"></div>
+                        <div class="item blue"><img src="./Images/blue-chicken.png"></div>
+                        <div class="item beige"><img src="./Images/classic-chicken.png"></div>
+                        <div class="item brown"><img src="./Images/brown-chicken.png"></div>
+                        <div class="item blue"><img src="./Images/blue-chicken.png"></div>
+
+                    </div>
+                </div>     
+            </div>
+
+
+            <div class="child-of-3-3 no-opacity">
+                <div class="dialogue-box" id="dialogueBox">
+                    <p id="dialogueText"></p>
+                    <div class="dialogue-character">
+                        <img id="dialogueImage" src="">
+                        <p id="dialogueWord"></p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="child-of-3-4 hidden">
+                <div class="golden-chicken">
+                    <img src="./Images/golden-chicken.png">
+                </div>
+
+
+                <div class="void-chicken">
+                    <img src="./Images/void-chicken.png">
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+   
+
+    <script src="script.js"></script>
+</body>
+</html>
